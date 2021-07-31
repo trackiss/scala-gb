@@ -23,12 +23,11 @@ object Implicits:
     def mask(mask: UByte): Int =
       if mask == UByte(0) then
         ub.toInt
-      else {
+      else
         val maskIndexes = (7 to 0 by -1).filter(mask.isHigh)
         Integer.parseInt(
           maskIndexes.map(ub.toBinaryString.reverse(_)).mkString,
           2
         )
-      }
 
 end Implicits
