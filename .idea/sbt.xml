@@ -7,8 +7,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/cpu" />
             <option value="$PROJECT_DIR$/infrastructure" />
+            <option value="$PROJECT_DIR$/memory" />
             <option value="$PROJECT_DIR$/project" />
           </set>
         </option>

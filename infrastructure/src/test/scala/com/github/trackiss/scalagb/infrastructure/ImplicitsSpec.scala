@@ -1,11 +1,10 @@
 package com.github.trackiss.scalagb.infrastructure
 
+import com.github.trackiss.scalagb.infrastructure.Implicits.*
 import org.scalatest.freespec.AnyFreeSpecLike
 import org.scalatest.matchers.should.Matchers
 
-class ImplicitsSpec extends AnyFreeSpecLike with Matchers {
-  import Implicits._
-
+class ImplicitsSpec extends AnyFreeSpecLike with Matchers:
   "UByteExtension" - {
     "toBooleans" in {
       UByte(b"1010_1010").toBooleans shouldBe
@@ -30,4 +29,5 @@ class ImplicitsSpec extends AnyFreeSpecLike with Matchers {
       UByte(b"1010_1010").mask(UByte(b"0011_1000")) shouldBe b"101"
     }
   }
-}
+
+end ImplicitsSpec

@@ -1,10 +1,10 @@
 package com.github.trackiss.scalagb.infrastructure
 
-import com.github.trackiss.scalagb.infrastructure.Implicits.Literals
+import com.github.trackiss.scalagb.infrastructure.Implicits.*
 import org.scalatest.freespec.AnyFreeSpecLike
 import org.scalatest.matchers.should.Matchers
 
-class UByteSpec extends AnyFreeSpecLike with Matchers {
+class UByteSpec extends AnyFreeSpecLike with Matchers:
   "UByte" - {
     "UByte" in {
       UByte(10).toInt shouldBe 10
@@ -131,4 +131,5 @@ class UByteSpec extends AnyFreeSpecLike with Matchers {
       (UByte(b"1100_0000") >>> 2) shouldBe UByte(b"0011_0000")
     }
   }
-}
+
+end UByteSpec

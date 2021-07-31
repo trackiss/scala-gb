@@ -1,10 +1,10 @@
 package com.github.trackiss.scalagb.infrastructure
 
-import com.github.trackiss.scalagb.infrastructure.Implicits.Literals
+import com.github.trackiss.scalagb.infrastructure.Implicits.*
 import org.scalatest.freespec.AnyFreeSpecLike
 import org.scalatest.matchers.should.Matchers
 
-class UShortSpec extends AnyFreeSpecLike with Matchers {
+class UShortSpec extends AnyFreeSpecLike with Matchers:
   "UShort" - {
     "UShort" in {
       UShort(10).toInt shouldBe 10
@@ -141,4 +141,5 @@ class UShortSpec extends AnyFreeSpecLike with Matchers {
         UShort(b"0011_0000_0000_0000")
     }
   }
-}
+
+end UShortSpec

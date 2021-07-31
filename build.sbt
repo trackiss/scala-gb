@@ -5,31 +5,38 @@ lazy val globalSettings = Seq(
     "-deprecation",
     "-feature",
     "-unchecked",
-    "-Xlint",
-    "-Wdead-code"
+    "-Yexplicit-nulls"
   ),
-  scalaVersion := "2.13.6"
+  scalaVersion := "3.0.1"
 )
 
 lazy val root = (project in file("."))
-  .aggregate(domain, infrastructure)
-  .settings(globalSettings: _*)
+  .settings(globalSettings)
   .settings(
     name := "scala-gb",
     version := "0.0.1"
   )
-  .dependsOn(domain, infrastructure)
+  .aggregate(cpu, infrastructure)
+  .dependsOn(cpu, infrastructure)
 
-lazy val domain = (project in file("domain"))
-  .settings(globalSettings: _*)
+lazy val cpu = (project in file("cpu"))
+  .settings(globalSettings)
   .settings(
-    name := "domain",
+    name := "cpu",
+    version := "0.0.1"
+  )
+  .dependsOn(infrastructure)
+
+lazy val memory = (project in file("memory"))
+  .settings(globalSettings)
+  .settings(
+    name := "memory",
     version := "0.0.1"
   )
   .dependsOn(infrastructure)
 
 lazy val infrastructure = (project in file("infrastructure"))
-  .settings(globalSettings: _*)
+  .settings(globalSettings)
   .settings(
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % scalaTestV % Test
